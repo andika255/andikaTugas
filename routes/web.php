@@ -25,8 +25,6 @@ Route::post('/nexmo','NexmoController@store')->name('nexmo.submit');
 
 Route::get('/katagori', 'KatagoriController@index')->name('kategori');
 
-Route::get('/uom', 'UomController@index')->name('uom');
-
 Route::get('/satuan', 'SatuanController@index')->name('satuan');
 
 Route::get('/barang', 'BarangController@index')->name('barang');
