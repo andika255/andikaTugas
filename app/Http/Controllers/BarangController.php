@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Barang;
+use App\Katagori;
 use Illuminate\Http\Request;
 
 class BarangController extends Controller
@@ -14,7 +15,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        return view('barang.index');
+        $katagoris = Katagori::paginate(5);
+        return view('barang.index', compact('katagoris'));
     }
 
     /**
@@ -81,11 +83,6 @@ class BarangController extends Controller
     public function destroy(Barang $barang)
     {
         //
-    }
-
-    public function restock()
-    {
-        return view('barang.restock');
     }
 
     public function tampilan()

@@ -14,7 +14,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return view('brand.index');
+        $brands = Brand::paginate(5);
+        return view('brand.index', compact('brands'));
     }
 
     /**
@@ -35,7 +36,12 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $katagoris = Brand::create(
+            $request->all()
+        );
+
+        return redirect()->back();
     }
 
     /**
@@ -57,7 +63,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        //
+        return view('brand.edit');
     }
 
     /**

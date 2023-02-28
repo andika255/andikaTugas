@@ -15,6 +15,8 @@ class CreateKatagorisTable extends Migration
     {
         Schema::create('katagoris', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('no_reg')->nullable();
+            $table->string('nama');
             $table->timestamps();
         });
     }

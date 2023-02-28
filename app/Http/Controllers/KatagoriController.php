@@ -14,7 +14,8 @@ class KatagoriController extends Controller
      */
     public function index()
     {
-        return view('katagori.index');
+        $katagoris = Katagori::paginate(5);
+        return view('katagori.index', compact('katagoris'));
     }
 
     /**
@@ -24,7 +25,12 @@ class KatagoriController extends Controller
      */
     public function create()
     {
-        //
+
+        $katagori = Katagori::create(
+            $request->all()
+        );
+
+        return redirect()->back();
     }
 
     /**
@@ -35,7 +41,12 @@ class KatagoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $katagori = Katagori::create(
+            $request->all()
+        );
+
+        return redirect()->back();
     }
 
     /**
@@ -57,7 +68,9 @@ class KatagoriController extends Controller
      */
     public function edit(Katagori $katagori)
     {
-        //
+        $katagori = Katagori::findOrFail($id);
+
+        return view('katagori.edit', compact('katagori'));
     }
 
     /**

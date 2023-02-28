@@ -11,11 +11,11 @@
             <form>
                 @csrf
                 <div class="form-group">
-                    <label for="katagori">Katagori</label>
+                    <label for="katagori">Nama Barang</label>
                     <select name="katagori" id="katagori" class="form-control">
                         <option value="">Pilih Kategori</option>
-                        <option value="a">poqe soker</option>
-                        <option value="b">poqe biasa</option>
+                        <option value="a">Block Mesin Ninja H2R</option>
+                        <option value="b">Block Mesin Ninja ZX-25R</option>
                     </select>
                 </div>
                 <div class="row">
@@ -24,8 +24,8 @@
                             <label for="uom">Brand</label>
                                 <select name="uom" id="uom" class="form-control">
                                     <option value="">Pilih Brand</option>
-                                    <option value="a">a</option>
-                                    <option value="b">b</option>
+                                    <option value="a">BRND/20230228/001</option>
+                                    <option value="b">BRND/20230228/002</option>
                                 </select>
                             </div>
                         <div class="form-group">
@@ -38,13 +38,13 @@
                             <label for="brand">UOM</label>
                                 <select name="brand" id="brand" class="form-control">
                                     <option value="">Pilih Satuan</option>
-                                    <option value="a">Onic</option>
-                                    <option value="b">Alter Ego</option>
+                                    <option value="a">UOM/20230228/001</option>
+                                    <option value="b">UOM/20230228/001</option>
                                 </select>
                             </div>
                         <div class="form-group">
-                            <label for="nama-barang">Jumlah Stock</label>
-                            <input class="form-control" id="nama-barang">
+                            <label for="">Jumlah Stock</label>
+                            <input type="text" class="form-control" name="quantity" id="">
                         </div>
                     </div>
                 </div>

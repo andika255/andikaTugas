@@ -26,10 +26,10 @@ class UsersTableSeeder extends Seeder
         $this->command->warn('Password is "inventory"');
 
         $anggota = factory(User::class)->create([
-            'name'     => 'ANGGOTA',
-            'email'    => 'anggota@inventory.com',
+            'name'     => 'asep',
+            'email'    => 'asep123@tugas.com',
             'email_verified_at' => now(),
-            'password' => bcrypt('inventory'),
+            'password' => bcrypt('tugas.com'),
         ]);
 
         $anggota->assignRole('anggota');

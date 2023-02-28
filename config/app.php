@@ -163,6 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Nexmo\Laravel\NexmoServiceProvider::class,
+        Alfa6661\AutoNumber\AutoNumberServiceProvider::class,
+
 
         /*
          * Package Service Providers...

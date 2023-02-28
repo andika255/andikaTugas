@@ -2,39 +2,80 @@
 
 @section('content')
 <div class="container">
-<div class="d-flex">
+    <div class="d-flex">
         <p style="margin-left: 2px; font-weight: bold;">Master Data</p>
         <p style="margin-left: 5px;">/ Edit Brand</p>
     </div>
     <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="nama-brand">Nama Brand</label>
-                            <input type="email" class="form-control" id="nama-brand" placeholder="">
+        @role('ketua')
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="{{route('brand.store')}}" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="nama-brand">Nama Brand</label>
+                                <input type="text" class="form-control" name="nama" id="nama-brand" placeholder="">
+                            </div>
                             <button type="submit" class="btn btn-outline-primary mt-3">Simpan Brand</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-7">
-            <div class="card">
-                <table class="table table-hover">
-                    <thead>
-                        <th scope="col">Kode Brand</th>
-                        <th scope="col">Nama Brand</th>
-                        <th scope="col">Options</th>
+            <div class="col-md-7">
+                <div class="card">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Kode Brand</th>
+                                <th scope="col">Nama Brand</th>
+                                <th scope="col">Options</th>
+                            </tr>
                     </thead>
                     <tbody>
-                        <td></td>
-                    </tbody>
+                        @forelse ($brands as $brand)
+                            <tr>
+                                <td>{{$brand->no_reg}}</td>
+                                <td>{{$brand->nama}}</td>
+                                <td>
+                                    <form action="" method="post">
+                                        @csrf
+                                        <a href="{{route('brand.edit')}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
+                                        <button class="submit btn btn-outline-danger bt-sm">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @empty
+
+                            @endforelse
+                        </tbody>
+                    </table>
                 </div>
             </div>
-
+            @endrole
+            @role('pimpinan')
+                <div class="col-md-12">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Kode Brand</th>
+                                        <th>Nama Brand</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>BRND/20220403/001</td>
+                                        <td>Kawasaki</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            @endrole
+        </div>
     </div>
-</div>
 
 @endsection

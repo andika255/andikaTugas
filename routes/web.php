@@ -24,18 +24,25 @@ Route::get('/nexmo','NexmoController@index');
 Route::post('/nexmo','NexmoController@store')->name('nexmo.submit'); 
 
 Route::get('/katagori', 'KatagoriController@index')->name('kategori');
+Route::get('/katagori.edit', 'KatagoriController@edit')->name('katagori.edit');
+Route::post('/katagori.store', 'KatagoriController@store')->name('katagori.store');
+
+Route::get('/permintaan', 'PermintaanController@index')->name('permintaan');
 
 Route::get('/satuan', 'SatuanController@index')->name('satuan');
+Route::get('/satuan.edit', 'SatuanController@edit')->name('satuan.edit');
+Route::post('/satuan.store', 'SatuanController@store')->name('satuan.store');
 
 Route::get('/barang', 'BarangController@index')->name('barang');
 Route::get('/barang/create', 'BarangController@create')->name('barang.create');
-Route::get('/barang/restock', 'BarangController@restock')->name('barang.restock');
 Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
 
 Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
 Route::get('/transaksi/masuk', 'TransaksiController@masuk')->name('transaksi.masuk');
 
 Route::get('/brand', 'BrandController@index')->name('brand');
+Route::get('/brand.edit', 'BrandController@edit')->name('brand.edit');
+Route::post('/brand.store', 'BrandController@store')->name('brand.store');
 
 Auth::routes();
 

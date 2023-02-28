@@ -33,30 +33,30 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @if (Route::has('login'))
-                                @auth
-                                    <a href="{{route('home')}}" class="nav-link" style="color: black"> Home </a>
+                        @auth
+                        <a href="{{route('home')}}" class="nav-link" style="color: black"> Home </a>
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Master Data
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{route('kategori')}}">Kategori</a>
+                                    <a class="dropdown-item" href="{{route('brand')}}">Brand</a>
+                                    <a class="dropdown-item" href="{{route('satuan')}}">UOM</a>
+                                </div>
+                                </div>
+                                <a href="{{route('barang')}}" class="nav-link" style="color: black">Master Barang</a>
                                     <div class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Master Data
+                                            Transaksi
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{route('kategori')}}">Kategori</a>
-                                        <a class="dropdown-item" href="{{route('brand')}}">Brand</a>
-                                        <a class="dropdown-item" href="{{route('satuan')}}">UOM</a>
+                                            <a class="dropdown-item" href="{{route('transaksi.masuk')}}">Barang Masuk</a>
+                                            <a class="dropdown-item" href="{{route('transaksi')}}">Barang Keluar</a>
                                         </div>
                                     </div>
-                                    <a href="{{route('barang.create')}}" class="nav-link" style="color: black">Master Barang</a>
-                                     <div class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" style="color: black" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Transaksi
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{route('transaksi.masuk')}}">Barang Masuk</a>
-                                        <a class="dropdown-item" href="{{route('transaksi')}}">Barang Keluar</a>
-                                        </div>
-                                    </div>
-                                @endauth
-                            @endif
+                                    @endauth
+                                @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
