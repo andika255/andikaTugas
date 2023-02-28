@@ -12,11 +12,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="katagori">Nama Barang</label>
-                    <select name="katagori" id="katagori" class="form-control">
-                        <option value="">Pilih Kategori</option>
-                        <option value="a">Block Mesin Ninja H2R</option>
-                        <option value="b">Block Mesin Ninja ZX-25R</option>
-                    </select>
+                    <input name="katagori" id="katagori" class="form-control">
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -24,8 +20,8 @@
                             <label for="uom">Brand</label>
                                 <select name="uom" id="uom" class="form-control">
                                     <option value="">Pilih Brand</option>
-                                    <option value="a">BRND/20230228/001</option>
-                                    <option value="b">BRND/20230228/002</option>
+                                    <option value="a">BRND/20230228/001 - Kawasaki</option>
+                                    <option value="b">BRND/20230228/002 - Kawasaki</option>
                                 </select>
                             </div>
                         <div class="form-group">
@@ -38,8 +34,8 @@
                             <label for="brand">UOM</label>
                                 <select name="brand" id="brand" class="form-control">
                                     <option value="">Pilih Satuan</option>
-                                    <option value="a">UOM/20230228/001</option>
-                                    <option value="b">UOM/20230228/001</option>
+                                    <option value="a">UOM/20230228/001 - Unit</option>
+                                    <option value="b">UOM/20230228/001 - Unit</option>
                                 </select>
                             </div>
                         <div class="form-group">
