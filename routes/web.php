@@ -23,9 +23,10 @@ Route::get('generate-pdf','HomeController@generatePDF');
 Route::get('/nexmo','NexmoController@index');
 Route::post('/nexmo','NexmoController@store')->name('nexmo.submit'); 
 
-Route::get('/katagori', 'KatagoriController@index')->name('kategori');
+Route::get('/katagori', 'KatagoriController@index')->name('katagori');
 Route::get('/katagori.edit', 'KatagoriController@edit')->name('katagori.edit');
 Route::post('/katagori.store', 'KatagoriController@store')->name('katagori.store');
+Route::get('/katagori/destroy/{katagori}', 'KatagoriController@destroy')->name('katagori.destroy');
 
 Route::get('/permintaan', 'PermintaanController@index')->name('permintaan');
 

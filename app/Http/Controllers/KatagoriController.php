@@ -91,8 +91,12 @@ class KatagoriController extends Controller
      * @param  \App\Katagori  $katagori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Katagori $katagori)
+    public function destroy(Request $request, $id)
     {
-        //
+        $katagori = Katagori::findOrFail($id);
+        $katagori->delete($request->all());
+
+        return redirect()->route('katagori');
     }
+
 }
