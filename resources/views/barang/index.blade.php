@@ -32,7 +32,7 @@
                                 Tampilkan Stock
                             </a>
                             @endrole
-                            @role('anggota')
+                            @role('customer')
                             <a href="{{route('barang.create', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
                                 Buat Permintaan
                             </a>
