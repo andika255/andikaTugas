@@ -11,22 +11,21 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Kode Kategori</th>
+                        <th>Kode Katagori</th>
                         <th>Kode Brand</th>
                         <th>Kode Satuan</th>
                         <th>Kode Barang</th>
                         <th>Nama Barang</th>
                         <th>Stock</th>
                         @role('customer')
-                            <th>Oprions</th>
+                        <th>Oprions</th>
                         @endrole
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($barangs as $barang)
                         <tr>
-
-                            <td>{{$barang->kategori->no_reg}}</td>
+                            <td>{{$barang->katagori->no_reg}}</td>
                             <td>{{$barang->brand->no_reg}}</td>
                             <td>{{$barang->satuan->no_reg}}</td>
                             <td>{{$barang->no_reg}}</td>
@@ -34,7 +33,7 @@
                             <td>{{$barang->quantity}}</td>
                             @role('customer')
                                 <td>
-                                    <a href="{{route('barang.request', $barang->id)}}" class="btn btn-outline-warning btn-sm">
+                                    <a href="{{route('barang.request', $barang->id )}}" class="btn btn-outline-warning btn-sm">
                                         Buat Permintaan
                                     </a>
                                 </td>
@@ -43,7 +42,6 @@
                     @empty
 
                     @endforelse
-
                 </tbody>
             </table>
         </div>

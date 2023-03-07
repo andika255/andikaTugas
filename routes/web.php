@@ -40,6 +40,7 @@ Route::get('/satuan/destroy/{satuan}', 'SatuanController@destroy')->name('satuan
 Route::get('/barang', 'BarangController@index')->name('barang');
 Route::get('/barang/create/{katagoris}', 'BarangController@create')->name('barang.create');
 Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
+Route::get('/request/{katagori}', 'RequestBarangController@edit')->name('barang.request');
 Route::post('/store/{katagori}', 'BarangController@store')->name('barang.store');
 
 Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');

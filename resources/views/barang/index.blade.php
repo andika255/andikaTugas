@@ -17,23 +17,23 @@
                      <th scope="col">Options</th>
                  </thead>
                  <tbody>
-                    @forelse ($katagoris as $katagori)
+                    @forelse ($cupboards as $cupboard)
                     <tr>
-                        <td>{{$katagori->no_reg}}</td>
-                        <td>{{$katagori->nama}}</td>
+                        <td>{{$cupboard->no_reg}}</td>
+                        <td>{{$cupboard->nama}}</td>
                        <td>
                         <form action="" method="post">
                             @csrf
                             @role('ketua')
-                            <a href="{{route('barang.create', $katagori->id)}}" class="btn btn-outline-secondary btn-sm">
+                            <a href="{{route('barang.create', $cupboard->id )}}" class="btn btn-outline-secondary btn-sm">
                                 update stock
                             </a>
-                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                            <a href="{{route('rak.barang', $cupboard->id )}}" class="btn btn-outline-secondary btn-sm">
                                 Tampilkan Stock
                             </a>
                             @endrole
                             @role('customer')
-                            <a href="{{route('rak.barang', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
+                            <a href="{{route('rak.barang', $cupboard->id )}}" class="btn btn-outline-warning btn-sm">
                                 Buat Permintaan
                             </a>
                             @endrole

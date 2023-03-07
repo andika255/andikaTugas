@@ -20,8 +20,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Kategori</label>
-                            <input type="text" value="{{$permintaan->kategori->nor_reg}} - {{$permintaan->kategori->nama}}" id="" class="form-control">
+                            <label for="">Katagori</label>
+                            <input type="text" value="{{$permintaan->katagori->nor_reg}} - {{$permintaan->katagori->nama}}" id="" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">

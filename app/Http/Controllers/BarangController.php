@@ -17,8 +17,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $katagoris = Katagori::paginate(5);
-        return view('barang.index', compact('katagoris'));
+        $cupboards  = Katagori::paginate(5);
+        return view('barang.index', compact('cupboards'));
     }
 
     /**
