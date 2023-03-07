@@ -33,7 +33,7 @@
                             </a>
                             @endrole
                             @role('customer')
-                            <a href="{{route('barang.create', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
+                            <a href="{{route('rak.barang', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
                                 Buat Permintaan
                             </a>
                             @endrole

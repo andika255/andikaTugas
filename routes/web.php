@@ -51,6 +51,8 @@ Route::post('/brand/store', 'BrandController@store')->name('brand.store');
 Route::patch('/brand/update/{brand}', 'BrandController@update')->name('brand.update');
 Route::get('/brand/destroy/{brand}', 'BrandController@destroy')->name('brand.destroy');
 
+Route::get('/barang/{katagori}', 'RakController@index')->name('rak.barang');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
