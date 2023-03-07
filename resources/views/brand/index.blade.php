@@ -40,8 +40,8 @@
                                 <td>
                                     <form action="" method="post">
                                         @csrf
-                                        <a href="{{route('brand.edit')}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
-                                        <button class="submit btn btn-outline-danger bt-sm">Hapus</button>
+                                        <a href="{{route('brand.edit', $brand->id )}}" class="btn btn-outline-warning btn-sm">Edit Brand</a>
+                                        <a href="./brand/destroy/{{ $brand->id }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');">Hapus Brand</a>
                                     </form>
                                 </td>
                             </tr>

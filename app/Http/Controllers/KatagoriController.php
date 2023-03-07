@@ -66,7 +66,7 @@ class KatagoriController extends Controller
      * @param  \App\Katagori  $katagori
      * @return \Illuminate\Http\Response
      */
-    public function edit(Katagori $katagori)
+    public function edit($id)
     {
         $katagori = Katagori::findOrFail($id);
 
@@ -82,7 +82,9 @@ class KatagoriController extends Controller
      */
     public function update(Request $request, Katagori $katagori)
     {
-        //
+        $katagori->update($request->all());
+
+        return redirect()->route('katagori');
     }
 
     /**

@@ -25,7 +25,11 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        $brand = brand::create(
+            $request->all()
+        );
+
+        return redirect()->back();
     }
 
     /**
@@ -61,11 +65,12 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit($id)
     {
-        return view('brand.edit');
-    }
+        $brand = Brand::findOrFail($id);
 
+        return view('brand.edit', compact('brand'));
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -75,7 +80,9 @@ class BrandController extends Controller
      */
     public function update(Request $request, Brand $brand)
     {
-        //
+        $brand->update($request->all());
+
+        return redirect()->route('brand');
     }
 
     /**
@@ -84,8 +91,11 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy(Request $request, $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->delete($request->all());
+
+        return redirect()->route('brand');
     }
 }

@@ -41,7 +41,7 @@
                                     <form action="" method="post">
                                         @csrf
                                         @method('GET')
-                                        <a href="{{route('brand.edit')}}" class="btn btn-outline-warning btn-sm">Edit Katagori</a>
+                                        <a href="{{route('katagori.edit', $katagori->id )}}" class="btn btn-outline-warning btn-sm">Edit Katagori</a>
                                         <a href="./katagori/destroy/{{ $katagori->id }}" class="btn btn-outline-danger btn-sm" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');">Hapus Katagori</a>
                                     </form>
                                 </td>
