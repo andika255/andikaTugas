@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Barang;
+use App\Brand;
+use App\Satuan;
 use App\Katagori;
 use Illuminate\Http\Request;
 
@@ -24,9 +26,14 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('barang.create');
+        $data = [
+            'katagoris' => Katagori::findOrFail($id),
+            'brands' => Brand::get(),
+            'satuans' => Satuan::get(),
+        ];
+        return view('barang.create', $data);
     }
 
     /**
@@ -35,9 +42,19 @@ class BarangController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $katagori = Katagori::findOrFail($id);
+        $barang = Barang::create([
+                'katagori_id'   => $katagori->id,
+                'nama'          => $request->nama,
+                'brand_id'      => $request->brand_id,
+                'satuan_id'     => $request->satuan_id,
+                'harga'         => $request->harga,
+                'quantity'      => $request->quantity,
+            ]);
+
+        return redirect()->back();
     }
 
     /**
@@ -46,9 +63,15 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(Barang $barang)
+    public function show($id)
     {
-        //
+        $data = [
+            'katagoris' => Katagori::findOrFail($id),
+            'brands'    => Brand::get(),
+            'satuans'   => Satuan::get(),
+        ];
+
+        return view('barang.create',$data);
     }
 
     /**

@@ -28,12 +28,12 @@
                             <a href="{{route('barang.create', $katagori->id)}}" class="btn btn-outline-secondary btn-sm">
                                 update stock
                             </a>
-                            <a href="{{route('barang.tampilan', $katagori->id)}}" class="btn btn-outline-secondary btn-sm">
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
                                 Tampilkan Stock
                             </a>
                             @endrole
                             @role('anggota')
-                            <a href="{{route('barang.tampilan', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
+                            <a href="{{route('barang.create', $katagori->id)}}" class="btn btn-outline-warning btn-sm">
                                 Buat Permintaan
                             </a>
                             @endrole

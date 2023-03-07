@@ -35,8 +35,9 @@ Route::get('/satuan.edit', 'SatuanController@edit')->name('satuan.edit');
 Route::post('/satuan.store', 'SatuanController@store')->name('satuan.store');
 
 Route::get('/barang', 'BarangController@index')->name('barang');
-Route::get('/barang/create', 'BarangController@create')->name('barang.create');
+Route::get('/barang/create/{katagoris}', 'BarangController@create')->name('barang.create');
 Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
+Route::post('/store/{katagori}', 'BarangController@store')->name('barang.store');
 
 Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
 Route::get('/transaksi/masuk', 'TransaksiController@masuk')->name('transaksi.masuk');

@@ -13,8 +13,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $ketua = factory(User::class)->create([
-            'name'     => 'andika',
-            'email'    => 'andikatgs@tugas.com',
+            'name'     => 'DIKA PT',
+            'email'    => 'andikapt@tugas.com',
             'email_verified_at' => now(),
             'password' => bcrypt('tugas.com'),
         ]);
