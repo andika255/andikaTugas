@@ -40,8 +40,9 @@ Route::get('/satuan/destroy/{satuan}', 'SatuanController@destroy')->name('satuan
 Route::get('/barang', 'BarangController@index')->name('barang');
 Route::get('/barang/create/{katagoris}', 'BarangController@create')->name('barang.create');
 Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
-Route::get('/request/{katagori}', 'RequestBarangController@edit')->name('barang.request');
 Route::post('/store/{katagori}', 'BarangController@store')->name('barang.store');
+Route::get('/barang/{katagori}', 'RakController@index')->name('rak.barang');
+Route::get('/request/{katagori}', 'RequestBarangController@edit')->name('barang.request');
 
 Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
 Route::get('/transaksi/masuk', 'TransaksiController@masuk')->name('transaksi.masuk');
@@ -52,7 +53,7 @@ Route::post('/brand/store', 'BrandController@store')->name('brand.store');
 Route::patch('/brand/update/{brand}', 'BrandController@update')->name('brand.update');
 Route::get('/brand/destroy/{brand}', 'BrandController@destroy')->name('brand.destroy');
 
-Route::get('/barang/{katagori}', 'RakController@index')->name('rak.barang');
+
 
 Auth::routes();
 

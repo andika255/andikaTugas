@@ -80,9 +80,10 @@ class BarangController extends Controller
      * @param  \App\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Barang $barang)
+    public function edit($id)
     {
-        //
+        $permintaan = Barang::FindOrFail($id);
+        return view('barang.edit', compact('permintaan'));
     }
 
     /**
