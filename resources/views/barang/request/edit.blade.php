@@ -9,7 +9,7 @@
         </ol>
     <div class="card border-0">
         <div class="card-body">
-            <form action="{{route('barang.store', $permintaan->id)}}" method="post">
+            <form action="{{route('barang.store.permintaan', $permintaan->id)}}" method="post">
                 @csrf
                 <div class="row">
                     <div class="col-md-12">

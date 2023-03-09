@@ -38,14 +38,16 @@ Route::patch('/satuan/update/{satuan}', 'SatuanController@update')->name('satuan
 Route::get('/satuan/destroy/{satuan}', 'SatuanController@destroy')->name('satuan.destroy');
 
 Route::get('/barang', 'BarangController@index')->name('barang');
-Route::get('/barang/create/{katagoris}', 'BarangController@create')->name('barang.create');
-Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
 Route::post('/store/{katagori}', 'BarangController@store')->name('barang.store');
-Route::get('/barang/{katagori}', 'RakController@index')->name('rak.barang');
+Route::get('/barang/tampilan', 'BarangController@tampilan')->name('barang.tampilan');
 Route::get('/request/{katagori}', 'RequestBarangController@edit')->name('barang.request');
+Route::get('/barang/create/{katagoris}', 'BarangController@create')->name('barang.create');
+route::post('store/permintaan/{barang}', 'RequestBarangController@store')->name('barang.store.permintaan');
 
-Route::get('/transaksi', 'TransaksiController@index')->name('transaksi');
-Route::get('/transaksi/masuk', 'TransaksiController@masuk')->name('transaksi.masuk');
+Route::get('/in', 'Transaksi\InController@index')->name('transaksi.in');
+Route::get('/out', 'Transaksi\OutController@index')->name('transaksi.out');
+Route::delete('{transaksi}', 'Transaksi\InController@destroy')->name('transaksi.destroy');
+Route::post('/store/{transaksi}', 'Transaksi\InController@store')->name('transaksi.store');
 
 Route::get('/brand', 'BrandController@index')->name('brand');
 Route::get('/brand/edit/{brand}', 'BrandController@edit')->name('brand.edit');
@@ -53,7 +55,7 @@ Route::post('/brand/store', 'BrandController@store')->name('brand.store');
 Route::patch('/brand/update/{brand}', 'BrandController@update')->name('brand.update');
 Route::get('/brand/destroy/{brand}', 'BrandController@destroy')->name('brand.destroy');
 
-
+Route::get('/barang/{katagori}', 'RakController@index')->name('rak.barang');
 
 Auth::routes();
 
