@@ -18,10 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('generate-pdf','HomeController@generatePDF');
+Route::get('generate-pdf', 'HomeController@generatePDF');
 
-Route::get('/nexmo','NexmoController@index');
-Route::post('/nexmo','NexmoController@store')->name('nexmo.submit'); 
+Route::get('/nexmo', 'NexmoController@index');
+Route::post('/nexmo', 'NexmoController@store')->name('nexmo.submit');
 
 Route::get('/katagori', 'KatagoriController@index')->name('katagori');
 Route::get('katagori/edit/{katagori}', 'KatagoriController@edit')->name('katagori.edit');
@@ -46,8 +46,8 @@ route::post('store/permintaan/{barang}', 'RequestBarangController@store')->name(
 
 Route::get('/in', 'Transaksi\InController@index')->name('transaksi.in');
 Route::get('/out', 'Transaksi\OutController@index')->name('transaksi.out');
-Route::delete('{transaksi}', 'Transaksi\InController@destroy')->name('transaksi.destroy');
-Route::post('/store/{transaksi}', 'Transaksi\InController@store')->name('transaksi.store');
+Route::delete('in/{transaksi}', 'Transaksi\InController@destroy')->name('transaksi.destroy');
+Route::post('in/store/{transaksi}', 'Transaksi\InController@store')->name('transaksi.store');
 
 Route::get('/brand', 'BrandController@index')->name('brand');
 Route::get('/brand/edit/{brand}', 'BrandController@edit')->name('brand.edit');

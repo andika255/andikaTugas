@@ -10,18 +10,17 @@ class InController extends Controller
 {
     public function index()
     {
-        $permintaans = Permintaan::with('barang')->where('status','in')->paginate(5);
+        $permintaans = Permintaan::with('barang')->where('status', 0)->paginate(5);
         return view('transaksi.in.index', compact('permintaans'));
     }
     public function store($id)
     {
-        $permintaans = Permintaan::all;
-        // $barangs = Barang::
+        $permintaans = Permintaan::findOrFail($id);
         $permintaans->update([
-            'barang_id' => $id,
-            ''
+            'status' => 1,
         ]);
-        return redirect()->route(transaksi.out);
+
+        return redirect()->route('transaksi.out');
     }
     public function destroy(Request $request, $id)
     {

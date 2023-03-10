@@ -46,13 +46,13 @@ class BarangController extends Controller
     {
         $katagori = Katagori::findOrFail($id);
         $barang = Barang::create([
-                'katagori_id'   => $katagori->id,
-                'nama'          => $request->nama,
-                'brand_id'      => $request->brand_id,
-                'satuan_id'     => $request->satuan_id,
-                'harga'         => $request->harga,
-                'quantity'      => $request->quantity,
-            ]);
+            'katagori_id'   => $katagori->id,
+            'nama'          => $request->nama,
+            'brand_id'      => $request->brand_id,
+            'satuan_id'     => $request->satuan_id,
+            'harga'         => $request->harga,
+            'quantity'      => $request->quantity,
+        ]);
 
         return redirect()->back();
     }
@@ -71,7 +71,7 @@ class BarangController extends Controller
             'satuans'   => Satuan::get(),
         ];
 
-        return view('barang.create',$data);
+        return view('barang.create', $data);
     }
 
     /**
@@ -113,5 +113,4 @@ class BarangController extends Controller
     {
         return view('barang.tampilan');
     }
-
 }
